@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  socks:
+    image: mparvin/openvpn_socks_docker
+    build: .
+    container_name: socks
+    restart: always
+    ports:
+      # PROXY_PORT
+      - ${PROXY_PORT}:${PROXY_PORT}
+    volumes:
+      - client.ovpn:/etc/openvpn/client.ovpn
+    env_file:
+      - .env
