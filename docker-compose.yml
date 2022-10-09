@@ -10,6 +10,6 @@ services:
       # PROXY_PORT
       - ${PROXY_PORT}:${PROXY_PORT}
     volumes:
-      - client.ovpn:/etc/openvpn/client.ovpn
+      - ./client.ovpn:/etc/openvpn/client.ovpn
     env_file:
       - .env
